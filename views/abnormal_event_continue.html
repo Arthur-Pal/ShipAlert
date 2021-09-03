@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- <meta name="keywords" content="keywords,keywords"> -->
+	<meta name="description" content="智慧航安資訊平臺系統 Backend System">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+	<link rel="shortcut icon" href="../img/backend_img/favicon.png"> <!-- 我的最愛圖示 -->
+	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.validate.js"></script><!-- 表單驗證 -->
+	<script type="text/javascript" src="../js/jquery.metadata.js"></script><!-- 用來判斷表單驗證的長度或數字的JS -->
+	<script type="text/javascript" src="../js/messages_zh_TW.js"></script>
+	<script type="text/javascript" src="../js/jquery.preload.js"></script>
+	<!-- type 換選 -->
+	<script type="text/javascript" src="../js/tagSrc/typeahead.bundle.min.js"></script>
+	<script type="text/javascript" src="../js/tagSrc/typeahead.jquery.min.js"></script>
+	<script type="text/javascript" src="../js/tagSrc/bloodhound.min.js"></script>
+	<script type="text/javascript" src="../js/tagSrc/typeSrc.js"></script>
+	<!-- 文字編輯器 -->
+	<script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
+	<!-- 日期選擇 -->
+	<script type="text/javascript" src="../js/datepicker.min.js"></script>
+	<script src="../js/i18n/datepicker.en.js"></script>
+
+	<script type="text/javascript" src="../js/backend.js"></script>
+	<!-- 20210628 Arthur add -->
+	<!-- <script type="text/javascript" src="../js/jqPaginator.min.js"></script> -->
+	<!-- <script type="text/javascript" src="../js/MtNetCCTV.js"></script> -->
+
+	<!-- 日期選擇樣式 -->
+	<link rel="stylesheet" href="../css/datepicker.min.css">
+	<link rel="stylesheet" href="../css/backend.css">
+	<link rel="stylesheet" href="../css/all.min.css">
+	<!--[if IE]>
+		<link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<link href="/css/font-awesome-ie7.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<title>智慧航安資訊平臺系統 Backend System</title>
+</head>
+
+<body>
+	<div id="mask" class="mask" style="display:none;"></div>
+	<!-- <div class="sidebar-switch">
+		<div class="">主項目功能</div>
+		<div class="btn-side-close" id="closeNav">
+			<i class="fad fa-bars"></i>
+			<p>隱藏選單</p>
+		</div>
+		<div class="btn-side-open" id="openNav">
+			<i class="fad fa-bars"></i>
+			<p>顯示選單</p>
+		</div>
+	</div> -->
+
+	<!--{top menu}-->
+	<div class="top-menu">
+	    <img src="../img/backend_img/side_logo.svg" alt="">
+	    <div class="system-name">
+	        綜合業務子系統
+	    </div>
+	    <div class="m-top-menu">
+	        <i class="fa fa-plus-circle"></i>
+	    </div>
+	    <div class="sub-system">
+	        <!-- <a href="list.html">綜合業務子系統</a> -->
+	        <a href="siitech_index.html">航安監控及航行預警子系統</a>
+	        <a href="#">海難應變子系統</a>
+	        <a href="#">CBR案例推理庫</a>
+	    </div>
+	    <div class="user-info">
+	        <div class="user-id">
+	            Hello,<span>Admin</span>
+	        </div>
+	        <div class="user-setting">
+	            <a href="###">
+	                <i class="fad fa-user"></i>
+	            </a>
+	            <a href="###">
+	                <i class="fad fa-cog"></i>
+	            </a>
+	            <a href="index.html" class="sign-out">
+	                <i class="fad fa-sign-out"></i>
+	            </a>
+	        </div>
+	    </div>
+	</div>
+	
+	<div class="btn-side-open" id="openNav">
+		<i class="fad fa-bars"></i>
+		<p>顯示選單</p>
+	</div>
+	<div class="side-nav">
+		<div class="side-box">
+			<div class="sidebar-switch">
+				<div class="">主項目功能</div>
+				<div class="btn-side-close" id="closeNav">
+					<i class="fad fa-bars"></i>
+					<p>隱藏選單</p>
+				</div>
+
+			</div>
+
+			<div class="nav-box">
+				<ul class="nav">
+					<li class="nav-item">
+						<div class="nav-sub-item">
+								<i class="far fa-pen-square"></i> 遇險訊息處理
+						</div>
+						<div class="sub-nav">
+								<a id="MessageReceive" href="http://localhost:61039/Events/Message/Receive">接受訊息</a>
+								<a id="MessageRelease" href="http://localhost:61039/Events/Message/Release">發布訊息</a>
+								<a id="MessageReleaseRecord" href="http://localhost:61039/Events/Message/ReleaseRecord">發布紀錄</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-sub-item">
+							<i class="far fa-pen-square"></i> 異常事件成立
+						</div>
+						<div class="sub-nav">
+							<a href="abnormal_event.html">事件成立</a>
+							<a href="abnormal_event_list.html">異常事件管理</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-sub-item">
+							<i class="far fa-pen-square"></i> 海難事件案件成立
+						</div>
+						<div class="sub-nav">
+							<a id="CreateEvent" href="http://localhost:61039/Events/CreateEvent/Index">案件成立</a>
+							<a href="http://localhost:61039/Events/FunctionMap/Index" target="_blank">緊急應變計畫</a>
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<div class="nav-sub-item">
+							<i class="fas fa-exclamation-circle"></i> 發生中海難事件
+						</div>
+						<div class="sub-nav">
+							<a id="CurrentEvent" href="http://localhost:61039/Events/CurrentEvent/Index" class="act">海難事件管理</a>
+							<a id="SheetVerify" href="http://localhost:61039/Events/SheetVerify/Index">通報單審核管理</a>
+						</div>
+					</li>
+
+					<li>
+						<a id="CheckRecord" href="http://localhost:61039/Events/CheckRecord/Index">
+							<i class="far fa-comments"></i> 通報紀錄管理
+						</a>
+					</li>
+					<li>
+						<a id="HistoryEvent" href="http://localhost:61039/Events/HistoryEvent/Index">
+							<i class="fal fa-folder"></i> 歷史海難事件檔案區
+						</a>
+					</li>
+					<li class="nav-item">
+						<div class="nav-sub-item">
+							<i class="fad fa-american-sign-language-interpreting"></i> 應變資源管理
+						</div>
+						<div class="sub-nav">
+							<a id="RescueSupport" href="http://localhost:61039/Events/RescueSupport/Index">搜尋救援資源</a>
+							<a id="RescueCompany" href="http://localhost:61039/Events/RescueCompany/Index">救援單位聯絡資訊</a>
+							<a id="RescueShip" href="http://localhost:61039/Events/RescueShip/Index">救援船隻管理</a>
+							<a id="RescueEquipmentAndMen" href="http://localhost:61039/Events/RescueEquipmentAndMen/Index">人員設備管理</a>
+							<a id="ResourceLocation" href="http://localhost:61039/Events/ResourceLocation/Index">EMIC救援資源位置</a>
+							<a id="ResourceDetail" href="http://localhost:61039/Events/ResourceDetail/Index">EMIC救援資源</a>
+							<a id="Hospital" href="http://localhost:61039/Events/Hospital/Index">醫療院所</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-sub-item">
+							<i class="far fa-pen-square"></i> 擱淺船隻未移除
+						</div>
+						<div class="sub-nav">
+							<a id="StrandedShipCreate" href="http://localhost:61039/Events/StrandedShip/Create">擱淺船隻立案</a>
+							<a id="StrandedShipCurrentEvent" href="http://localhost:61039/Events/StrandedShip/CurrentEvent">目前擱淺事件</a>
+							<a id="StrandedShipUpdateHistory" href="http://localhost:61039/Events/StrandedShip/UpdateHistory">更新情形</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-sub-item">
+							<i class="far fa-cog"></i> 系統參數管理
+						</div>
+						<div class="sub-nav">
+							<a id="ReceiveUnit" href="http://localhost:61039/Events/ReceiveUnit/Index">傳真單位設定</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="side-footer">
+				© 2020 交通部航港局
+			</div>
+		</div>
+	</div>
+	<!--{template admin_header}-->
+
+<link rel="stylesheet" href="../css/abnormal_sty.css">
+<div class="main">
+	<h1>異常事件管理</h1>
+	<h2>異常事件續報</h2>
+	<div class="input-box input-box-w">
+		<ul class="unfold-list">
+			<li>
+				<div class="unfold-item">
+					<p>歷史續報內容</p>
+					<i class="fad fa-plus"></i>
+				</div>
+				<div class="unfold-cont" style="display: none;">
+					<ul class="list">
+						<li class="title">
+							<a href="#" class="group-box-83" title="編輯" alt="編輯">
+								<div class="box-55">事件/項目</div>
+								<div class="box-20">通報人員</div>
+								<div class="box-20">更新時間</div>
+							</a>
+							<div class="group-box-15 txt-c">
+								操作
+							</div>
+						</li>
+
+						
+						<li>
+							<a href="#" class="group-box-83" title="查看" alt="查看">
+								<div class="box-55">異常案件續報2</div>
+								<div class="box-20">王一二</div>
+								<div class="box-20">2021/01/01</div>
+							</a>
+							<div class="group-box-15 opera">
+								<a href="#" title="查看" alt="查看">
+									<i class="fas fa-eye"></i> 查看
+								</a>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="group-box-83" title="查看" alt="查看">
+								<div class="box-55">異常案件續報1</div>
+								<div class="box-20">柳工權</div>
+								<div class="box-20">2021/01/01</div>
+							</a>
+							<div class="group-box-15 opera">
+								<a href="#" title="查看" alt="查看">
+									<i class="fas fa-eye"></i> 查看
+								</a>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="group-box-83" title="查看" alt="查看">
+								<div class="box-55">異常案件初報</div>
+								<div class="box-20">王一二</div>
+								<div class="box-20">2021/01/01</div>
+							</a>
+							<div class="group-box-15 opera">
+								<a href="#" title="查看" alt="查看">
+									<i class="fas fa-eye"></i> 查看
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+	<form action="">
+		<div class="input-box input-box-w inline-group">
+			<label for="tit">建立時間</label>
+			<div class="inline-group-cont">
+				<div class="inline-item">
+					<p>2021/05/22 12:55</p>
+				</div>
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="tit">建立人員</label>
+			<div class="inline-group-cont">
+				<div class="inline-item">
+					<h4>單位：</h4>
+					<p>交通部航港局</p>
+				</div>
+				<div class="inline-item">
+					<h4>姓名：</h4>
+					<p>王一二</p>
+				</div>
+				<div class="inline-item">
+					<h4>職稱：</h4>
+					<p>技正</p>
+				</div>
+				<div class="inline-item">
+					<h4>電話：</h4>
+					<p>(02)89780083</p>
+				</div>
+				<div class="inline-item">
+					<h4>傳真：</h4>
+					<p>(02)23253442</p>
+				</div>
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="tit">通知對象</label>
+			<div class="inline-group-cont">
+				<div class="check-list">
+					<div class="check-all">
+						<label for="all" id="abnormalCheckAll">
+							<input type="checkbox" name="tagArea" id="all" value="">
+							<div class="check-box"></div>
+							<span>全選</span>
+						</label>
+					</div>
+					<label for="tag1">
+						<input type="checkbox" name="tagArea" id="tag1" value="">
+						<div class="check-box"></div>
+						<span>海事中心</span>
+					</label>
+					<label for="tag2">
+						<input type="checkbox" name="tagArea" id="tag2" value="">
+						<div class="check-box"></div>
+						<span>漁業署</span>
+					</label>
+					<label for="tag3">
+						<input type="checkbox" name="tagArea" id="tag3" value="">
+						<div class="check-box"></div>
+						<span>彰化離岸封場VTS</span>
+					</label>
+					<label for="tag4">
+						<input type="checkbox" name="tagArea" id="tag4" value="">
+						<div class="check-box"></div>
+						<span>海巡署</span>
+					</label>
+					<label for="tag5">
+						<input type="checkbox" name="tagArea" id="tag5" value="">
+						<div class="check-box"></div>
+						<span>基隆海岸電台</span>
+					</label>
+					<label for="tag6">
+						<input type="checkbox" name="tagArea" id="tag6" value="">
+						<div class="check-box"></div>
+						<span>各國際港口VTS</span>
+					</label>
+					<label for="tag7">
+						<input type="checkbox" name="tagArea" id="tag7" value="">
+						<div class="check-box"></div>
+						<span>國搜中心</span>
+					</label>
+					<label for="tag8">
+						<input type="checkbox" name="tagArea" id="tag8" value="">
+						<div class="check-box"></div>
+						<span>台北任務管制中心</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">訊息主旨</label>
+			<div class="inline-group-cont">
+				<input type="text" class="input-sty required" name="tit" id="tit" value="">
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">發生時間</label>
+			<div class="inline-group-cont icon-right">
+				<input type="text" class="input-sty required datepicker-here" name="date" id="date" value="">
+				<i class="fad fa-calendar-alt"></i>
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">發生地點</label>
+			<div class="inline-group-cont">
+				<input type="text" class="input-sty required" name="tit" id="tit" value="高雄港口,錨地附近">
+				<div class="inline-sub-box">
+					<h4>座標經度</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="25°02.171'N(25.036179)">
+				</div>
+				<div class="inline-sub-box">
+					<h4>座標緯度</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="119°58.188'E(119.969818)">
+				</div>
+			</div>
+			
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">異常船舶</label>
+			<div class="inline-group-cont">
+				<input type="text" class="input-sty required" name="tit" id="tit" value="恆星客船">
+				<div class="inline-sub-box">
+					<h4>MMSI</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="416123456">
+				</div>
+				<div class="inline-sub-box">
+					<h4>船舶號數</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="023456">
+				</div>
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">事件說明</label>
+			<div class="inline-group-cont">
+				<textarea name="" id="" class="input-sty">偏離固定航行路線且航向飄移不定</textarea>
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">其他備註</label>
+			<div class="inline-group-cont">
+				<textarea name="" id="" class="input-sty">AIS回傳訊號速度小於2海浬</textarea>
+			</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">事件處理狀態</label>
+			<div class="inline-group-cont status-btn">
+				<div class="btn btn-cancel">
+					<input type="radio" name="status">
+					<i class="fas fa-square"></i>
+					<div class="status-act"></div>
+					<span>事件結案</span>
+				</div>
+				<div class="btn btn-cancel">
+					<input type="radio" name="status">
+					<i class="fas fa-square"></i>
+					<div class="status-act"></div>
+					<span>事件續報</span>
+					
+				</div>
+				<div class="btn btn-cancel">
+					<input type="radio" name="status">
+					<i class="fas fa-square"></i>
+					<div class="status-act"></div>
+					<span>歸類海難事件</span>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="btn-area">
+			<a href="#" class="btn btn-cancel"><i class="fa fa-chevron-left"></i> 取消</a>
+			<div class="btn btn-submit">
+				<i class="fa fa-check"></i> 確認送出
+				<input type="submit" class="btn">
+			</div>
+		</div>
+		
+	</form>
+	
+
+
+</div>

@@ -1,0 +1,134 @@
+@charset "UTF-8";
+.inline-group {
+  margin: 0 5% 30px 0;
+}
+.inline-group > label {
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px 0 0;
+  margin: 0 10px 0 0;
+}
+.inline-group .check-list label {
+  width: 200px;
+}
+
+.inline-group-cont {
+  width: calc( 100% - 150px);
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 1px solid #ddd;
+  padding: 0 0 0 15px;
+}
+.inline-group-cont .input-sty {
+  font-size: 16px;
+}
+.inline-group-cont textarea {
+  height: 80px;
+}
+
+.inline-sub-box {
+  width: 300px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px 0 0;
+}
+.inline-sub-box h4 {
+  font-weight: 500;
+  color: #999;
+  display: inline-block;
+  vertical-align: middle;
+}
+.inline-sub-box .input-sty {
+  width: calc(100% - 70px);
+}
+
+.inline-item {
+  width: 260px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.inline-item h4 {
+  font-weight: 500;
+  color: #999;
+  margin: 5px 10px 5px 0;
+  padding: 5px 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.inline-item p {
+  font-size: 16px;
+  color: #555;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.check-all {
+  width: 100%;
+}
+
+.status-btn span {
+  color: #fff;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 3;
+}
+.status-btn i {
+  vertical-align: middle;
+  position: relative;
+  z-index: 3;
+}
+.status-btn .btn-cancel {
+  position: relative;
+}
+.status-btn .btn-cancel:hover {
+  background: #d14d4d;
+}
+.status-btn .btn-cancel.act {
+  background: #d14d4d;
+}
+.status-btn input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.status-btn input[type=radio]:checked + .fa-square:before {
+  content: "";
+}
+.status-btn input[type=radio]:checked + i + .status-act {
+  display: block;
+}
+
+.status-act {
+  background: #d14d4d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.opera a, .opera i {
+  color: #0071BE;
+}
+
+.search-result-box {
+  padding: 10px;
+}
+
+.search-result {
+  display: inline-block;
+  vertical-align: middle;
+}
+.search-result span {
+  color: #00538b;
+  font-weight: 500;
+}
