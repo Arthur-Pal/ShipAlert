@@ -12,22 +12,12 @@
 	<script type="text/javascript" src="../js/jquery.metadata.js"></script><!-- 用來判斷表單驗證的長度或數字的JS -->
 	<script type="text/javascript" src="../js/messages_zh_TW.js"></script>
 	<script type="text/javascript" src="../js/jquery.preload.js"></script>
-	<!-- type 換選 -->
-	<script type="text/javascript" src="../js/tagSrc/typeahead.bundle.min.js"></script>
-	<script type="text/javascript" src="../js/tagSrc/typeahead.jquery.min.js"></script>
-	<script type="text/javascript" src="../js/tagSrc/bloodhound.min.js"></script>
-	<script type="text/javascript" src="../js/tagSrc/typeSrc.js"></script>
-	<!-- 文字編輯器 -->
-	<script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
 	<!-- 日期選擇 -->
 	<script type="text/javascript" src="../js/datepicker.min.js"></script>
 	<script src="../js/i18n/datepicker.en.js"></script>
 
 	<script type="text/javascript" src="../js/backend.js"></script>
-	<!-- 20210628 Arthur add -->
-	<!-- <script type="text/javascript" src="../js/jqPaginator.min.js"></script> -->
-	<!-- <script type="text/javascript" src="../js/MtNetCCTV.js"></script> -->
-	<script type="text/javascript" src="../js/ShipAlert.js"></script>
+
 
 	<!-- 日期選擇樣式 -->
 	<link rel="stylesheet" href="../css/datepicker.min.css">
@@ -119,7 +109,7 @@
 							<i class="far fa-pen-square"></i> 異常事件成立
 						</div>
 						<div class="sub-nav">
-							<a href="abnormal_event.html">事件成立</a>
+							<a href="abnormal_event_add.html">事件成立</a>
 							<a href="abnormal_event_list.html">異常事件管理</a>
 						</div>
 					</li>
@@ -197,166 +187,121 @@
 <link rel="stylesheet" href="../css/abnormal_sty.css">
 <div class="main">
 	<h1>異常事件管理</h1>
-	<h2>異常事件資料建立</h2>
-	<form action="">
-		<div class="input-box input-box-w inline-group">
-			<label for="tit">建立時間</label>
-			<div class="inline-group-cont">
-				<div class="inline-item">
-					<p>2021/05/22 12:55</p>
-				</div>
+	<h2>異常案件續報2 查看</h2>
+
+	<div class="input-box input-box-w inline-group first-group">
+		<label for="">建立時間</label>
+		<div class="inline-group-cont">
+			<div class="inline-item">
+				<div class="cont-view">2021/05/22 12:55</div>
 			</div>
 		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="tit">建立人員</label>
-			<div class="inline-group-cont">
-				<div class="inline-item">
-					<h4>單位：</h4>
-					<p>交通部航港局</p>
-				</div>
-				<div class="inline-item">
-					<h4>姓名：</h4>
-					<p>王一二</p>
-				</div>
-				<div class="inline-item">
-					<h4>職稱：</h4>
-					<p>技正</p>
-				</div>
-				<div class="inline-item">
-					<h4>電話：</h4>
-					<p>(02)89780083</p>
-				</div>
-				<div class="inline-item">
-					<h4>傳真：</h4>
-					<p>(02)23253442</p>
-				</div>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">建立人員</label>
+		<div class="inline-group-cont">
+			<div class="inline-item">
+				<h4>單位：</h4>
+				<p>交通部航港局</p>
+			</div>
+			<div class="inline-item">
+				<h4>姓名：</h4>
+				<p>王一二</p>
+			</div>
+			<div class="inline-item">
+				<h4>職稱：</h4>
+				<p>技正</p>
+			</div>
+			<div class="inline-item">
+				<h4>電話：</h4>
+				<p>(02)89780083</p>
+			</div>
+			<div class="inline-item">
+				<h4>傳真：</h4>
+				<p>(02)23253442</p>
 			</div>
 		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="tit">通知對象</label>
-			<div class="inline-group-cont">
-				<div class="check-list">
-					<div class="check-all">
-						<label for="all" id="abnormalCheckAll">
-							<input type="checkbox" name="tagArea" id="all" value="">
-							<div class="check-box"></div>
-							<span>全選</span>
-						</label>
-					</div>
-					<label for="tag1">
-						<input type="checkbox" name="tagArea" id="tag1" value="">
-						<div class="check-box"></div>
-						<span>海事中心</span>
-					</label>
-					<label for="tag2">
-						<input type="checkbox" name="tagArea" id="tag2" value="">
-						<div class="check-box"></div>
-						<span>漁業署</span>
-					</label>
-					<label for="tag3">
-						<input type="checkbox" name="tagArea" id="tag3" value="">
-						<div class="check-box"></div>
-						<span>彰化離岸封場VTS</span>
-					</label>
-					<label for="tag4">
-						<input type="checkbox" name="tagArea" id="tag4" value="">
-						<div class="check-box"></div>
-						<span>海巡署</span>
-					</label>
-					<label for="tag5">
-						<input type="checkbox" name="tagArea" id="tag5" value="">
-						<div class="check-box"></div>
-						<span>基隆海岸電台</span>
-					</label>
-					<label for="tag6">
-						<input type="checkbox" name="tagArea" id="tag6" value="">
-						<div class="check-box"></div>
-						<span>各國際港口VTS</span>
-					</label>
-					<label for="tag7">
-						<input type="checkbox" name="tagArea" id="tag7" value="">
-						<div class="check-box"></div>
-						<span>國搜中心</span>
-					</label>
-					<label for="tag8">
-						<input type="checkbox" name="tagArea" id="tag8" value="">
-						<div class="check-box"></div>
-						<span>台北任務管制中心</span>
-					</label>
-				</div>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">通知對象</label>
+		<div class="inline-group-cont">
+			<div class="cont-view">海事中心、彰化離岸風場VTS、國搜中心</div>
+		</div>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">訊息主旨</label>
+		<div class="inline-group-cont">
+			<div class="cont-view">異常案件續報2</div>
+		</div>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">發生時間</label>
+		<div class="inline-group-cont icon-right">
+			<div class="cont-view">07/05, 2021</div>
+		</div>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">發生地點</label>
+		<div class="inline-group-cont">
+			<div class="cont-view">高雄港口,錨地附近</div>
+			<div class="inline-sub-box">
+				<h4>座標經度：</h4>
+				<div class="cont-view">25°02.171'N(25.036179)</div>
+			</div>
+			<div class="inline-sub-box">
+				<h4>座標緯度：</h4>
+				<div class="cont-view">119°58.188'E(119.969818)</div>
 			</div>
 		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="">訊息主旨</label>
-			<div class="inline-group-cont">
-				<input type="text" class="input-sty required" name="tit" id="tit" value="">
+		
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">異常船舶</label>
+		<div class="inline-group-cont">
+			<div class="cont-view">恆星客船</div>
+			<div class="inline-sub-box">
+				<h4>MMSI：</h4>
+				<div class="cont-view">416123456</div>
+			</div>
+			<div class="inline-sub-box">
+				<h4>船舶號數：</h4>
+				<div class="cont-view">023456</div>
 			</div>
 		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="">發生時間</label>
-			<div class="inline-group-cont icon-right">
-				<input type="text" class="input-sty required datepicker-here" name="date" id="date" value="">
-				<i class="fad fa-calendar-alt"></i>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">事件說明</label>
+		<div class="inline-group-cont">
+			<div class="cont-view">偏離固定航行路線且航向飄移不定</div>
+		</div>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">其他備註</label>
+		<div class="inline-group-cont">
+			<div class="cont-view">AIS回傳訊號速度小於2海浬</div>
+		</div>
+	</div>
+	<div class="input-box input-box-w inline-group">
+		<label for="">事件處理狀態</label>
+		<div class="inline-group-cont status-btn">
+			<div class="btn btn-cancel act">
+				<div class="status-act"></div>
+				<span>續報</span>
 			</div>
 		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="">發生地點</label>
-			<div class="inline-group-cont">
-				<input type="text" class="input-sty required" name="tit" id="tit" value="高雄港口,錨地附近">
-				<div class="inline-sub-box">
-					<h4>座標經度</h4>
-					<input type="text" class="input-sty" name="tit" id="tit" value="25°02.171'N(25.036179)">
-				</div>
-				<div class="inline-sub-box">
-					<h4>座標緯度</h4>
-					<input type="text" class="input-sty" name="tit" id="tit" value="119°58.188'E(119.969818)">
-				</div>
-			</div>
-			
-		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="">異常船舶</label>
-			<div class="inline-group-cont">
-				<input type="text" class="input-sty required" name="tit" id="tit" value="恆星客船">
-				<div class="inline-sub-box">
-					<h4>MMSI</h4>
-					<input type="text" class="input-sty" name="tit" id="tit" value="416123456">
-				</div>
-				<div class="inline-sub-box">
-					<h4>船舶號數</h4>
-					<input type="text" class="input-sty" name="tit" id="tit" value="023456">
-				</div>
-			</div>
-			
-		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="">事件說明</label>
-			<div class="inline-group-cont">
-				<textarea name="" id="" class="input-sty">偏離固定航行路線且航向飄移不定</textarea>
-			</div>
-		</div>
-		<div class="input-box input-box-w inline-group">
-			<label for="">其他備註</label>
-			<div class="inline-group-cont">
-				<textarea name="" id="" class="input-sty">AIS回傳訊號速度小於2海浬</textarea>
-			</div>
-		</div>
-		<div class="btn-area">
-			<a href="#" class="btn btn-cancel"><i class="fa fa-chevron-left"></i> 取消</a>
-			<div class="btn btn-submit">
-				<i class="fa fa-check"></i> 確認送出
-				<input type="button" class="btn" id="SaveData">
-			</div>
-		</div>
-	</form>
+	</div>
+
+	<div class="btn-area">
+		<a href="abnormal_event_cont_list.html" class="btn btn-cancel">
+			<i class="fa fa-chevron-left"></i> 返回
+		</a>
+		<a href="abnormal_event_edit.html" class="btn btn-submit">
+			<i class="fas fa-pencil-alt"></i> 編輯
+		</a>
+		
+	</div>
+	<div class="note">{!判斷該報是否為最新一期，如不是，將編輯按鈕隱藏}</div>
+	
+
+
 </div>
-
-<script>
-	$(function () {
-		$("#SaveData").on("click", function () {
-			console.log("SaveData Enter");
-			SaveShipAlert();
-		});
-	});
-
-</script>

@@ -187,185 +187,161 @@
 <link rel="stylesheet" href="../css/abnormal_sty.css">
 <div class="main">
 	<h1>異常事件管理</h1>
-	<h2>異常事件清單</h2>
-	<div class="search-box">
-		<form method="get" action="" id="searchForm">
-			<div class="search-ui-box">
-				<label for="searchDateRange">
-					<input type="radio" name="search" id="searchDateRange" value="2">
-					<div class="radio-box"></div>
-					<span>日期區間搜尋：</span>
-				</label>
-				<input type="text" name="date" id="dateStart" value="" autocomplete="off" class="input-sty w150 datepicker-here" />
-				至
-				<input type="text" name="date" id="dateEnd" value="" autocomplete="off" class="input-sty  w150 datepicker-here" />
-			</div>
-			<div class="search-ui-box">
-				<label for="status">
-					<input type="radio" name="search" id="status" value="4">
-					<div class="radio-box"></div>
-					<span>事件狀態：</span>
-				</label>
-				<select type="text" name="search" id="search" value="" class="select-sty w150">
-					<option value="">全部</option>
-					<option value="">初報</option>
-					<option value="">續報</option>
-					<option value="">結案</option>
-					<option value="">轉海難事件</option>
-				</select>
-			</div>
-			
-			<div class="search-ui-box">
-				<label for="keyWordInput">
-					<input type="radio" name="search" id="keyWordInput" value="1">
-					<div class="radio-box"></div>
-					<span>關鍵字搜尋：</span>
-				</label>
-				<input type="text" name="keyWord" id="keyWord" value="" class="input-sty w150" />
-			</div>
-			
-			<div class="btn-area">
-				<div class="btn btn-submit" id="Search">
-					<i class="fas fa-search"></i>
-					搜尋
-					<input type="submit">
+	<h2>異常事件資料建立</h2>
+	<form action="abnormal_event_list.html">
+		<div class="input-box input-box-w inline-group first-group">
+			<label for="tit">建立時間</label>
+			<div class="inline-group-cont">
+				<div class="inline-item">
+					<p>2021/05/22 12:55</p>
 				</div>
 			</div>
-		</form>
-	</div>
-	<div class="search-result-box">
-		<div class="search-result">全部事件 : <span>4</span> 件</div>
-		<div class="search-result">篩選後事件數 : 共 <span>4</span> 件</div>
-	</div>
-	<ul class="list">
-		<li class="title">
-			<div class="group-box-83">
-				<div class="box-5 txt-c">項次</div>
-				<div class="box-10">異常事件名稱</div>
-				<div class="box-30">事件說明</div>
-				<div class="box-10">事件狀態</div>
-				<div class="box-8">初報人員</div>
-				<div class="box-10">最後續報人員</div>
-				<div class="box-8">單位</div>
-				<div class="box-15">其他備註</div>
+		</div>
+		<div class="input-box input-box-w inline-group first-group">
+			<label for="tit">建立人員</label>
+			<div class="inline-group-cont">
+				<div class="inline-item">
+					<h4>單位：</h4>
+					<p>交通部航港局</p>
+				</div>
+				<div class="inline-item">
+					<h4>姓名：</h4>
+					<p>王一二</p>
+				</div>
+				<div class="inline-item">
+					<h4>職稱：</h4>
+					<p>技正</p>
+				</div>
+				<div class="inline-item">
+					<h4>電話：</h4>
+					<p>(02)89780083</p>
+				</div>
+				<div class="inline-item">
+					<h4>傳真：</h4>
+					<p>(02)23253442</p>
+				</div>
 			</div>
-			<div class="group-box-15 opera txt-r">歷史通報內容</div>
-		</li>
-		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">1</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">續報3</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="tit">通知對象</label>
+			<div class="inline-group-cont">
+				<div class="check-list">
+					<div class="check-all">
+						<label for="all" id="abnormalCheckAll">
+							<input type="checkbox" name="tagArea" id="all" value="">
+							<div class="check-box"></div>
+							<span>全選</span>
+						</label>
+					</div>
+					<label for="tag1">
+						<input type="checkbox" name="tagArea" id="tag1" value="">
+						<div class="check-box"></div>
+						<span>海事中心</span>
+					</label>
+					<label for="tag2">
+						<input type="checkbox" name="tagArea" id="tag2" value="">
+						<div class="check-box"></div>
+						<span>漁業署</span>
+					</label>
+					<label for="tag3">
+						<input type="checkbox" name="tagArea" id="tag3" value="">
+						<div class="check-box"></div>
+						<span>彰化離岸風場VTS</span>
+					</label>
+					<label for="tag4">
+						<input type="checkbox" name="tagArea" id="tag4" value="">
+						<div class="check-box"></div>
+						<span>海巡署</span>
+					</label>
+					<label for="tag5">
+						<input type="checkbox" name="tagArea" id="tag5" value="">
+						<div class="check-box"></div>
+						<span>基隆海岸電台</span>
+					</label>
+					<label for="tag6">
+						<input type="checkbox" name="tagArea" id="tag6" value="">
+						<div class="check-box"></div>
+						<span>各國際港口VTS</span>
+					</label>
+					<label for="tag7">
+						<input type="checkbox" name="tagArea" id="tag7" value="">
+						<div class="check-box"></div>
+						<span>國搜中心</span>
+					</label>
+					<label for="tag8">
+						<input type="checkbox" name="tagArea" id="tag8" value="">
+						<div class="check-box"></div>
+						<span>台北任務管制中心</span>
+					</label>
+				</div>
 			</div>
-			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_continue_add.html" title="新增" alt="新增">
-					<i class="fas fa-file-plus"></i> 新增
-				</a>
-				<a href="abnormal_event_cont_list.html" title="查看/編輯" alt="查看/編輯">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
-				</a>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">訊息主旨</label>
+			<div class="inline-group-cont">
+				<input type="text" class="input-sty required" name="tit" id="tit" value="">
 			</div>
-		</li>
-		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">2</div>
-				<div class="box-10">疑似擱淺</div>
-				<div class="box-30">不是錨定狀態速度卻小於1，持續兩小時</div>
-				<div class="box-10">轉海難事件</div>
-				<div class="box-8">黑琦</div>
-				<div class="box-10">黃琦</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">透過監控預警系統警報察覺異常</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">發生時間</label>
+			<div class="inline-group-cont icon-right">
+				<input type="text" class="input-sty required datepicker-here" autocomplete="off" name="date" id="date" value="">
+				<i class="fad fa-calendar-alt"></i>
 			</div>
-			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_cont_list.html" title="查看" alt="查看">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
-				</a>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">發生地點</label>
+			<div class="inline-group-cont">
+				<input type="text" class="input-sty required" name="tit" id="tit" value="高雄港口,錨地附近">
+				<div class="inline-sub-box">
+					<h4>座標經度</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="25°02.171'N(25.036179)">
+				</div>
+				<div class="inline-sub-box">
+					<h4>座標緯度</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="119°58.188'E(119.969818)">
+				</div>
 			</div>
-		</li>
-		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">3</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">續報3</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
+			
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">異常船舶</label>
+			<div class="inline-group-cont">
+				<input type="text" class="input-sty required" name="tit" id="tit" value="恆星客船">
+				<div class="inline-sub-box">
+					<h4>MMSI</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="416123456">
+				</div>
+				<div class="inline-sub-box">
+					<h4>船舶號數</h4>
+					<input type="text" class="input-sty" name="tit" id="tit" value="023456">
+				</div>
 			</div>
-			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_continue_add.html" title="新增" alt="新增">
-					<i class="fas fa-file-plus"></i> 新增
-				</a>
-				<a href="abnormal_event_cont_list.html" title="查看/編輯" alt="查看/編輯">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
-				</a>
+			
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">事件說明</label>
+			<div class="inline-group-cont">
+				<textarea name="" id="" class="input-sty">偏離固定航行路線且航向飄移不定</textarea>
 			</div>
-		</li>
-		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">4</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">續報3</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
+		</div>
+		<div class="input-box input-box-w inline-group">
+			<label for="">其他備註</label>
+			<div class="inline-group-cont">
+				<textarea name="" id="" class="input-sty">AIS回傳訊號速度小於2海浬</textarea>
 			</div>
-			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_continue_add.html" title="新增" alt="新增">
-					<i class="fas fa-file-plus"></i> 新增
-				</a>
-				<a href="abnormal_event_cont_list.html" title="查看/編輯" alt="查看/編輯">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
-				</a>
+		</div>
+		<div class="btn-area">
+			<a href="abnormal_event_list.html" class="btn btn-cancel">
+				<i class="fa fa-chevron-left"></i> 取消
+			</a>
+			<div class="btn btn-submit">
+				<i class="fa fa-check"></i> 確認送出
+				<input type="submit" class="btn">
 			</div>
-		</li>
-		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">5</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">結案</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
-			</div>
-			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_cont_list.html" title="查看" alt="查看">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
-				</a>
-			</div>
-		</li>
-	</ul>
-	            <div class="pagination">
-	                <div class="pagination-numbers">
-	                    <a href="#" title="第一頁">
-	                        <i class="fas fa-arrow-to-left"></i>
-	                    </a>
-	                    <a href="#" title="上一頁">
-	                        <i class="fas fa-arrow-left"></i>
-	                    </a>
-	                    <a href="#">1</a>
-	                    <a href="#">2</a>
-	                    <a href="#" title="" class="act">3</a>
-	                    <a href="#">4</a>
-	                    <a href="#">5</a>
-	                    <a href="#" title="下一頁">
-	                        <i class="fas fa-arrow-right"></i>
-	                    </a>
-	                    <a href="#" title="最後頁">
-	                        <i class="fas fa-arrow-to-right"></i>
-	                    </a>
-	                </div>
-	            </div>
+		</div>
+	</form>
+	
+
 
 </div>

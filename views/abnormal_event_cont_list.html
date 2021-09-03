@@ -187,185 +187,103 @@
 <link rel="stylesheet" href="../css/abnormal_sty.css">
 <div class="main">
 	<h1>異常事件管理</h1>
-	<h2>異常事件清單</h2>
-	<div class="search-box">
-		<form method="get" action="" id="searchForm">
-			<div class="search-ui-box">
-				<label for="searchDateRange">
-					<input type="radio" name="search" id="searchDateRange" value="2">
-					<div class="radio-box"></div>
-					<span>日期區間搜尋：</span>
-				</label>
-				<input type="text" name="date" id="dateStart" value="" autocomplete="off" class="input-sty w150 datepicker-here" />
-				至
-				<input type="text" name="date" id="dateEnd" value="" autocomplete="off" class="input-sty  w150 datepicker-here" />
-			</div>
-			<div class="search-ui-box">
-				<label for="status">
-					<input type="radio" name="search" id="status" value="4">
-					<div class="radio-box"></div>
-					<span>事件狀態：</span>
-				</label>
-				<select type="text" name="search" id="search" value="" class="select-sty w150">
-					<option value="">全部</option>
-					<option value="">初報</option>
-					<option value="">續報</option>
-					<option value="">結案</option>
-					<option value="">轉海難事件</option>
-				</select>
-			</div>
-			
-			<div class="search-ui-box">
-				<label for="keyWordInput">
-					<input type="radio" name="search" id="keyWordInput" value="1">
-					<div class="radio-box"></div>
-					<span>關鍵字搜尋：</span>
-				</label>
-				<input type="text" name="keyWord" id="keyWord" value="" class="input-sty w150" />
-			</div>
-			
-			<div class="btn-area">
-				<div class="btn btn-submit" id="Search">
-					<i class="fas fa-search"></i>
-					搜尋
-					<input type="submit">
-				</div>
-			</div>
-		</form>
-	</div>
-	<div class="search-result-box">
-		<div class="search-result">全部事件 : <span>4</span> 件</div>
-		<div class="search-result">篩選後事件數 : 共 <span>4</span> 件</div>
+	<h2>
+		異常事件
+		<span>事件主旨事件主旨事件主旨事件主旨</span> 
+		歷史紀錄
+	</h2>
+	<div class="btn-area">
+		<a href="abnormal_event_continue_add.html" class="btn btn-blue">
+			<i class="fa fa-plus"></i> 新增續報
+		</a>
 	</div>
 	<ul class="list">
 		<li class="title">
-			<div class="group-box-83">
-				<div class="box-5 txt-c">項次</div>
-				<div class="box-10">異常事件名稱</div>
-				<div class="box-30">事件說明</div>
-				<div class="box-10">事件狀態</div>
-				<div class="box-8">初報人員</div>
-				<div class="box-10">最後續報人員</div>
-				<div class="box-8">單位</div>
-				<div class="box-15">其他備註</div>
+			<div class="group-box-83" title="編輯" alt="編輯">
+				<div class="box-45">事件/項目</div>
+				<div class="box-20">狀態</div>
+				<div class="box-10">通報人員</div>
+				<div class="box-20">更新時間</div>
 			</div>
-			<div class="group-box-15 opera txt-r">歷史通報內容</div>
+			<div class="group-box-15 txt-r">
+				操作
+			</div>
 		</li>
 		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">1</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">續報3</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
+			<div class="group-box-83" title="查看" alt="查看">
+				<div class="box-45">主旨轉海難事件範例</div>
+				<div class="box-20">轉海難事件</div>
+				<div class="box-10">王一二</div>
+				<div class="box-20">2021/02/01</div>
 			</div>
 			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_continue_add.html" title="新增" alt="新增">
-					<i class="fas fa-file-plus"></i> 新增
+				<a href="abnormal_event_final_edit.html" title="編輯" alt="編輯">
+					<i class="fas fa-pencil-alt"></i> 編輯
 				</a>
-				<a href="abnormal_event_cont_list.html" title="查看/編輯" alt="查看/編輯">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
+				<a href="abnormal_event_continue_final_view.html" target="_blank" title="查看" alt="查看">
+					<i class="fas fa-eye"></i> 查看
 				</a>
 			</div>
 		</li>
 		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">2</div>
-				<div class="box-10">疑似擱淺</div>
-				<div class="box-30">不是錨定狀態速度卻小於1，持續兩小時</div>
-				<div class="box-10">轉海難事件</div>
-				<div class="box-8">黑琦</div>
-				<div class="box-10">黃琦</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">透過監控預警系統警報察覺異常</div>
+			<div class="group-box-83" title="查看" alt="查看">
+				<div class="box-45">主旨結案範例</div>
+				<div class="box-20">結案</div>
+				<div class="box-10">王一二</div>
+				<div class="box-20">2021/01/01</div>
 			</div>
 			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_cont_list.html" title="查看" alt="查看">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
+				<a href="abnormal_event_final_edit.html" title="編輯" alt="編輯">
+					<i class="fas fa-pencil-alt"></i> 編輯
+				</a>
+				<a href="abnormal_event_continue_final_view.html" target="_blank" title="查看" alt="查看">
+					<i class="fas fa-eye"></i> 查看
 				</a>
 			</div>
 		</li>
 		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">3</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">續報3</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
+			<div class="group-box-83" title="查看" alt="查看">
+				<div class="box-45">主旨主旨主旨主旨範例</div>
+				<div class="box-20">異常案件續報2</div>
+				<div class="box-10">王一二</div>
+				<div class="box-20">2021/01/01</div>
 			</div>
 			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_continue_add.html" title="新增" alt="新增">
-					<i class="fas fa-file-plus"></i> 新增
+				<a href="abnormal_event_edit.html" title="編輯" alt="編輯">
+					<i class="fas fa-pencil-alt"></i> 編輯
 				</a>
-				<a href="abnormal_event_cont_list.html" title="查看/編輯" alt="查看/編輯">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
+				<a href="abnormal_event_continue_view.html" target="_blank" title="查看" alt="查看">
+					<i class="fas fa-eye"></i> 查看
 				</a>
 			</div>
 		</li>
 		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">4</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">續報3</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
+			<div class="group-box-83" title="查看" alt="查看">
+				<div class="box-45">主旨主旨主旨主旨</div>
+				<div class="box-20">異常案件續報1</div>
+				<div class="box-10">柳工權</div>
+				<div class="box-20">2021/01/01</div>
 			</div>
 			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_continue_add.html" title="新增" alt="新增">
-					<i class="fas fa-file-plus"></i> 新增
-				</a>
-				<a href="abnormal_event_cont_list.html" title="查看/編輯" alt="查看/編輯">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
+				<a href="abnormal_event_view.html" target="_blank" title="查看" alt="查看">
+					<i class="fas fa-eye"></i> 查看
 				</a>
 			</div>
 		</li>
 		<li>
-			<div class="group-box-83" title="編輯" alt="編輯">
-				<div class="box-5 txt-c">5</div>
-				<div class="box-10">航行異常</div>
-				<div class="box-30">偏離固定航行路線且航向飄移不定</div>
-				<div class="box-10">結案</div>
-				<div class="box-8">王一二</div>
-				<div class="box-10">謝老闆</div>
-				<div class="box-8">航港局</div>
-				<div class="box-15">AIS回傳訊號速度小於2海浬</div>
+			<div class="group-box-83" title="查看" alt="查看">
+				<div class="box-45">主旨主旨主旨主旨</div>
+				<div class="box-20">異常案件初報</div>
+				<div class="box-10">王一二</div>
+				<div class="box-20">2021/01/01</div>
 			</div>
 			<div class="group-box-15 opera txt-r">
-				<a href="abnormal_event_cont_list.html" title="查看" alt="查看">
-					<i class="fas fa-pencil-alt"></i> 查看/編輯
+				<a href="abnormal_event_view.html" target="_blank" title="查看" alt="查看">
+					<i class="fas fa-eye"></i> 查看
 				</a>
 			</div>
 		</li>
 	</ul>
-	            <div class="pagination">
-	                <div class="pagination-numbers">
-	                    <a href="#" title="第一頁">
-	                        <i class="fas fa-arrow-to-left"></i>
-	                    </a>
-	                    <a href="#" title="上一頁">
-	                        <i class="fas fa-arrow-left"></i>
-	                    </a>
-	                    <a href="#">1</a>
-	                    <a href="#">2</a>
-	                    <a href="#" title="" class="act">3</a>
-	                    <a href="#">4</a>
-	                    <a href="#">5</a>
-	                    <a href="#" title="下一頁">
-	                        <i class="fas fa-arrow-right"></i>
-	                    </a>
-	                    <a href="#" title="最後頁">
-	                        <i class="fas fa-arrow-to-right"></i>
-	                    </a>
-	                </div>
-	            </div>
+
 
 </div>

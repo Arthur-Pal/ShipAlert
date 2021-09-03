@@ -13,6 +13,10 @@
   width: 200px;
 }
 
+.inline-group.first-group {
+  margin: 20px 0 30px;
+}
+
 .inline-group-cont {
   width: calc( 100% - 150px);
   display: inline-block;
@@ -119,6 +123,9 @@
 .opera a, .opera i {
   color: #0071BE;
 }
+.opera.txt-r {
+  text-align: right;
+}
 
 .search-result-box {
   padding: 10px;
@@ -131,4 +138,11 @@
 .search-result span {
   color: #00538b;
   font-weight: 500;
+}
+
+.cont-view {
+  font-size: 16px;
+  color: #555;
+  width: 100%;
+  display: inline-block;
 }
